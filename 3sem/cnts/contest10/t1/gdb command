@@ -1,0 +1,12 @@
+break parse_value
+commands
+    silent
+    set $count = $count + 1
+    if $count == 2
+        print item->type
+        continue
+    end
+    continue
+end
+set $count = 0
+run

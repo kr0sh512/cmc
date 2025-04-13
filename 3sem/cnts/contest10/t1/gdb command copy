@@ -1,0 +1,12 @@
+break parse_string if $pc == *parse_string + <offset_to_line>
+commands
+    silent
+    set $count = $count + 1
+    if $count == 4
+        print len
+        continue
+    end
+    continue
+end
+set $count = 0
+run
