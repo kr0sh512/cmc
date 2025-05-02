@@ -1,23 +1,27 @@
 #include <string>
-using namespace std;
 
 class BinaryNumber
 {
-    string str;
+    std::string str;
 public:
-    BinaryNumber(const string& s = "0") {
+    BinaryNumber(const std::string& s = "0") {
         str = s;
     }
-    operator string () const {
+
+    operator std::string() const {
         return str;
     }
+
     const BinaryNumber& operator++() {
-        std::string::iterator i = str.end() - 1;
+        auto i = --str.end();
+
         while (*i == '1' && i != str.begin()) {
             *i = '0';
             --i;
         }
+
         if (i == str.begin()) {
+            *i = '0';
             str.insert(str.begin(), '1');
         } else {
             *i = '1';
