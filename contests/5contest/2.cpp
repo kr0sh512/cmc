@@ -11,12 +11,12 @@ int main() {
         mp[name].push_back(grade);
     }
 
-    for (auto x : mp) {
+    for (auto& x : mp) {
         std::cout << x.first << " ";
 
         double tmp = 0;
         int n = 0;
-        for (auto i : x.second) {
+        for (auto& i : x.second) {
             tmp += i;
             ++n;
         }

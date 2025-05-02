@@ -18,7 +18,7 @@ int main() {
         mp[std::make_pair(r, c)] %= mod;
     }
 
-    for (auto x : mp) {
+    for (auto& x : mp) {
         if (x.second) std::cout << x.first.first << " " << x.first.second << " " << x.second << std::endl;
     }
 
