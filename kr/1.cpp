@@ -1,8 +1,8 @@
-// #include <iostream>
+#include <iostream>
 #include <vector>
 
 template <typename T>
-size_t incremental_seq(const T& cnt) {
+std::size_t incremental_seq(const T& cnt) {
     int max_len = 0;
 
     auto iter = cnt.begin();
@@ -26,9 +26,10 @@ size_t incremental_seq(const T& cnt) {
 }
 
 
-// int main() {
-//     std::vector v{ 4,1,2,3,4,3,4,5 };
-//     std::cout << incremental_seq(v) << std::endl;
+int main() {
+   std::vector<int> v{ 4,1,2,3,4,3,4,5 };
+   std::cout << incremental_seq(v) << std::endl;
 
-//     return 0;
-// }
+   return 0;
+}
+
