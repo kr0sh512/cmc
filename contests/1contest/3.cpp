@@ -13,8 +13,13 @@ int main() {
             int old = c;
             c = getchar();
 
-            if (!(c == EOF || !isdigit(c))) {
+            if (isdigit(c)) {
                 continue;
+            }
+
+            if (c == EOF) {
+                putchar(old);
+                break;
             }
 
             putchar(old);
@@ -26,10 +31,6 @@ int main() {
 
         putchar(c);
         c = getchar();
-    }
-
-    if (c != '\n') {
-        putchar('\n');
     }
 
     return 0;

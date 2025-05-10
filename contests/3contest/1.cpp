@@ -1,9 +1,11 @@
 #include <cmath>
 #include <string>
+#include <sstream>
 
 namespace numbers {
     class complex {
-        double c_re, c_im;
+        double c_re = 0;
+        double c_im = 0;
     public:
         complex(double r = 0, double i = 0) : c_re(r), c_im(i) {}
         explicit complex(const std::string& s) {
@@ -22,10 +24,11 @@ namespace numbers {
             return sqrt(abs2());
         }
         std::string to_string() const {
-            char buf[100];
-            sprintf(buf, "(%.10g,%.10g)", c_re, c_im);
+            std::stringstream ss;
+            ss.precision(10);
+            ss << "(" << c_re << "," << c_im << ")";
 
-            return std::string(buf);
+            return ss.str();
         }
         complex& operator+=(const complex& other) {
             c_re += other.c_re;

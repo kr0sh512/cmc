@@ -15,8 +15,8 @@ void process(const std::vector<int>& v1, std::vector<int>& v2) {
             iter = v2.erase(iter);
         }
 
-        num--;
-        iter--;
+        --num;
+        --iter;
     }
 
     return;
