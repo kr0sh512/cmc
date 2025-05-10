@@ -4,7 +4,7 @@ public:
     virtual ~Figure() {}
 };
 
-class Rectangle : Figure {
+class Rectangle : public Figure {
     int a;
     int b;
 public:
@@ -19,7 +19,7 @@ public:
     }
 };
 
-class Triangle : Figure {
+class Triangle : public Figure {
     int a;
     int b;
     int c;
@@ -34,3 +34,17 @@ public:
         return false;
     }
 };
+
+// #include <cassert>
+
+// int main() {
+//     Rectangle r1(10, 5), r2(10, 2), r3(10, 5), r4(5, 10);
+//     Triangle t1(1, 2, 3);
+//     Figure* f = &r1;
+
+//     assert(!f->equals(&r2));
+//     assert(f->equals(&r3));
+//     assert(!f->equals(&r4));
+//     assert(!f->equals(&t1));
+//     assert(!f->equals(nullptr));
+// }
